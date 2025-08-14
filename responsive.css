@@ -1,0 +1,182 @@
+/* Responsive CSS for RedWolf Website */
+
+/* Base responsive rules */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  .logo img {
+    width: 45px;
+    margin-left: 0;
+    position: relative;
+    margin-right: 10px;
+  }
+  
+  .hero {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+  
+  .hero h1, .hero .subtitle {
+    font-size: 1.8rem;
+  }
+  
+  .courses-grid, .cta-courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .access-section, .live-sessions-section, .community-section {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .about-container, .contact-container {
+    margin: 2rem auto;
+    padding: 1.5rem;
+  }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .navbar nav {
+    flex-direction: column;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  
+  .navbar nav a {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+  }
+  
+  .auth-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  
+  .auth-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .logo img {
+    position: relative;
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 10px;
+  }
+  
+  .hero h1, .hero .subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .courses-grid, .cta-courses-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .course-card {
+    width: 100%;
+  }
+  
+  .footer-content {
+    padding: 1rem;
+  }
+  
+  .footer-links, .footer-social {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  
+  .footer-links a:not(:last-child)::after {
+    display: none;
+  }
+  
+  .logo-footer {
+    position: static !important;
+    margin: 1rem auto !important;
+  }
+  
+  .payment-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .product-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .social-links {
+    width: 100%;
+  }
+  
+  .social-link {
+    width: 100%;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .hero h1, .hero .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .about-title, .contact-title {
+    font-size: 1.8rem;
+  }
+  
+  .about-section h2 {
+    font-size: 1.1rem;
+  }
+  
+  .about-section p, .contact-desc {
+    font-size: 0.95rem;
+  }
+  
+  .product-title {
+    font-size: 1rem;
+  }
+  
+  .product-price {
+    font-size: 1.5rem;
+  }
+  
+  .product-value {
+    font-size: 0.9rem;
+  }
+  
+  .form-section, .product-card, .product-details, .payment-method {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedWolf Courses</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .disclaimer-banner { 
+      background: #FFC72C; 
+      color: #181c27; 
+      text-align: center; 
+      padding: 1rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      position: relative;
+      z-index: 100;
+    }
+    .disclaimer-banner a {
+      color: #181c27;
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      .cta-courses-grid { grid-template-columns: 1fr; }
+      .access-section, .live-sessions-section, .community-section { flex-direction: column; gap: 1.2rem; }
+      .hero-video iframe { height: 350px !important; }
+    }
+    @media (max-width: 360px) {
+      .logo img{
+padding-left: 30px;
+padding-top: 10px;
+
+      }
+
+
+      .navbar nav { flex-direction: column; align-items: flex-start; }
+      .navbar nav a { display: block; margin: 0.5rem 0; }
+
+      .auth-buttons { flex-direction: column; gap: 0.5rem; }
+      .hero h1, .hero .subtitle { font-size: 1.2rem !important; }
+      .hero-video iframe { margin: 0 auto; height: 150px !important; border-radius: 12px !important; }
+      .cta-course-card, .cta-btn-main, .cta-btn, .cta-btn.glow { width: 100%; font-size: 1rem; padding: 1rem; }
+      .footer-content, .footer-links, .footer-social { flex-direction: column; gap: 0.7rem; }
+      .footer-logo { margin-bottom: 0.7rem; }
+      .access-section, .live-sessions-section, .community-section { padding: 1rem; }
+      .access-image img, .live-sessions-image img, .community-image img { max-width: 100%; height: auto; }
+    }
+    @media (max-width: 400px) {
+      .hero h1, .hero .subtitle { font-size: 1rem !important; }
+      .cta-course-card { padding: 1rem; }
+      .footer-content { padding: 0.5rem; }
+    }
+    .logout-btn {
+      display: inline-block;
+      padding: 0.7rem 2.5rem;
+      background: #181c27;
+      color: #FFC72C !important;
+      border: 2px solid #FFC72C;
+      border-radius: 12px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      text-transform: capitalize;
+      text-decoration: none;
+      margin-left: 15px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      box-sizing: border-box;
+    }
+    .logout-btn:hover {
+      background: #FFC72C;
+      color: #181c27 !important;
+    }
+  </style>
+</head>
+<body class="dark-theme">
+<!-- Scrolling note banner -->
+<div style="background: #FFC72C; color: #181c27; font-weight: bold; font-size: 1.2rem; width: 100%; overflow: hidden; white-space: nowrap; border-top: 4px solid #fff; border-bottom: 4px solid #fff;">
+  <div style="display: inline-block; padding: 0.7rem 0; animation: scroll-left 18s linear infinite; min-width: 100vw;">
+    <span style="margin-left: 1.5rem;"><i class="fa fa-bell"></i> <span style='color: #22c55e;'>0$ Course</span> is only for today, <span style='color: #ff3b3b;'>this offer will expire in 24 hours</span></span>
+  </div>
+</div>
+<style>
+@keyframes scroll-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+  <header class="navbar">
+    <a style="text-decoration: none;" href="index.php">
+      <div class="logo"><img style="
+        width: 55px;
+        margin-left: 120px;
+        margin-top: -7px;
+        position: absolute;
+        " src="logo.png" alt="">REDWOLF</div>
+    </a>
+    
+    <nav>
+      <a href="index.php" class="active">Home</a>
+      <a href="#courses">Courses</a>
+      <a href="Cards.html">Cards</a>
+      <a href="EMT.html">Money transfer</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="auth-buttons">
+              <a class="login-btn" href="login.html">Login</a>
+        <a class="signup-btn" href="signup.html">Sign Up</a>
+          </div>
+  </header>
+  <main>
+    <section class="Today_Offer">
+    <h1 style="text-align: center;">Today Offer Card + Premium Course in <b style="color: red;">0$</b></h1>
+    <div style="display: flex; justify-content: center;">
+      <a href="Join-Now.php?title=Card+Premium+Course&price=18&value=LIFETIME&flag=https://cdn-icons-png.flaticon.com/512/3135/3135768.png" style="background-color: green;" class="cta-btn today-offer-btn">Join Now</a>
+    </div>
+    <style>
+      /* Responsive styling for Today_Offer section */
+      .today-offer-btn {
+        border: 2px solid green;
+        box-shadow: 0 0 10px rgba(255, 199, 44, 0.5);
+      }
+      @media screen and (max-width: 768px) {
+        .Today_Offer h1 {
+          font-size: 1.5rem;
+          padding: 0 15px;
+        }
+        .today-offer-btn {
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 150px;
+        }
+      }
+    </style>
+    </section>
+
+    <section class="hero">
+      <h1 class="glow-text" style="text-transform:uppercase; font-weight:900;">MONEY MAKING IS <span style="font-weight:900;">A SKILL</span></h1>
+      <p class="subtitle" style="font-size:1.6rem; margin-top:1.2rem;">We will teach you how to <span style="font-weight:900;">master it</span></p>
+      <div class="hero-video" style="max-width: 2000px; display: flex; justify-content: center;">
+        <iframe class="video4"src="https://player.vimeo.com/video/1084741661?h=28cd1ff947" width="100%" height="750" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="border-radius: 40px; box-shadow: 0 4px 32px #0003; width: 200%; max-width: 1200px; min-height: 400px;"></iframe>
+      </div>
+      <a href="order.php?title=Carding%20Course&price=18&value=LIFETIME&flag=https://cdn-icons-png.flaticon.com/512/3135/3135768.png" class="cta-btn">Explore Courses</a>
+    </section>
+    <section id="courses" class="cta-courses-section">
+      <div class="cta-courses-grid">
+        <div class="cta-course-card">
+          <div class="cta-title">CARDING COURSE</div>
+          <div class="cta-price-row">
+            <span class="cta-old-price">$0</span> <span class="cta-price">$0 <span class="cta-unit">LTL</span></span>
+          </div>
+          <ul class="cta-list">
+            <li>Recorded course</li>
+            <li>Premium group access for lifetime</li>
+            <li>Learn TikTok, PUBG UC, Amazon, Walmart</li>
+            <li>CC to BTC</li>
+            <li>Daraaz and Gift cards method</li>
+          </ul>
+          <a href="order.php?title=Carding%20Course&price=18&value=LIFETIME&flag=https://cdn-icons-png.flaticon.com/512/3135/3135768.png" class="cta-btn-main">Buy Now</a>
+        </div>
+        <div class="cta-course-card">
+          <div class="cta-title">LIVE CLASSES</div>
+          <div class="cta-price-row">
+            <span class="cta-price">$0 <span class="cta-unit">Full Learn</span></span></button>
+          </div>
+          <ul class="cta-list">
+            <li>Live Classes at Google Meet</li>
+            <li>Recorded Course</li>
+            <li>Free Premium Group Access</li>
+            <li>Free Bins Access</li>
+          </ul>
+          <a href="order.php?title=Live%20Classes&price=49&value=Full%20Learn&flag=https://cdn-icons-png.flaticon.com/512/3135/3135768.png" class="cta-btn-main">Buy Now</a>
+        </div>
+      </div>
+    </section>
+    <section class="lockin-section">
+      <div class="lockin-headline">OR DO NOTHING..</div>
+      <div class="lockin-sub">Go watch Netflix. Work a 9-5.</div>
+      <div class="lockin-warning">
+        <span class="lockin-icon">&#9888;</span>
+      </div>
+      <div class="lockin-price">LOCK-IN YOUR PRICE OF <span class="gold">$0</span></div>
+      <div class="lockin-desc">The price will increase to $0 a month, it's your last chance.</div>
+      <div class="lockin-desc2">Hundreds of thousands of students have already joined RED WOLF PREMIUM<br>and are on their way to financial freedom.</div>
+    </section>
+    <section class="join-section">
+      <h2>Join 2,000+ Students</h2>
+      <p>Start your journey today and become a cybersecurity expert!</p>
+      <a href="order.php?title=Carding%20Course&price=18&value=LIFETIME&flag=https://cdn-icons-png.flaticon.com/512/3135/3135768.png" class="cta-btn glow">Join Now</a>
+    </section>
+    <section class="access-section" style="margin: 4rem auto 2.5rem auto; max-width: 1100px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem; margin-bottom: 100px; margin-top: 100px;">
+      <div class="access-image" style="flex: 1 1 350px; min-width: 320px; text-align: center;">
+        <img  src="https://framerusercontent.com/images/WFSJh0SPfkYfWx6XtirFMSdivIY.webp" alt="Access Preview" style="width: 100%; max-width: 500px; border-radius: 18px; box-shadow: 0 4px 32px #0003; background: #181c27;" />
+      </div>
+      <div class="access-content" style="flex: 1 1 400px; min-width: 320px;">
+        <div style="font-size: 2.2rem; font-weight: 900; color: #fff; margin-bottom: 1.2rem; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; gap: 0.7rem;">
+          <span style="font-size: 2.2rem; color: #fff; filter: drop-shadow(0 0 8px #fff2);"><i class="fa fa-lock"></i>🔒</span> YOU WILL GET <span style="color: #FFC72C;">ACCESS TO</span>
+        </div>
+        <div style="font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 1rem; text-transform: uppercase;">STEP-BY-STEP LEARNING</div>
+        <div style="color: #bfc9d1; font-size: 1.1rem; margin-bottom: 2rem;">
+          You will get <b>access to 100+ video courses</b> and well-structured tutorials covering everything from the fundamentals of modern business to <b>niche money-making strategies</b>.
+        </div>
+        <div class="access-checklist">
+          <div style="background: #181c27; border-radius: 12px; margin-bottom: 1rem; padding: 1.1rem 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 2px 16px #0003; font-size: 1.1rem; font-weight: 700; color: #fff;">
+            <span style="color: #FFC72C; font-size: 1.5rem; margin-right: 0.7rem;">✔</span> Easy-to-follow program for financial success
+          </div>
+          <div style="background: #181c27; border-radius: 12px; margin-bottom: 1rem; padding: 1.1rem 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 2px 16px #0003; font-size: 1.1rem; font-weight: 700; color: #fff;">
+            <span style="color: #FFC72C; font-size: 1.5rem; margin-right: 0.7rem;">✔</span> New high income skills
+          </div>
+          <div style="background: #181c27; border-radius: 12px; margin-bottom: 1rem; padding: 1.1rem 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 2px 16px #0003; font-size: 1.1rem; font-weight: 700; color: #fff;">
+            <span style="color: #FFC72C; font-size: 1.5rem; margin-right: 0.7rem;">✔</span> Hyper advanced learning application
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="live-sessions-section" style="margin: 4rem auto 2.5rem auto; max-width: 1100px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem;">
+      <div class="live-sessions-content" style="flex: 1 1 400px; min-width: 320px;">
+        <div style="font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 1.2rem; letter-spacing: 1px; text-transform: uppercase;">DAILY LIVE SESSIONS WITH<br>MILLIONAIRE COACHES</div>
+        <div style="color: #bfc9d1; font-size: 1.1rem; margin-bottom: 1.5rem;">
+          Each of our <b>professors have made over $1M USD profit</b> using the methods they teach inside of our curriculum.
+        </div>
+        <div style="color: #bfc9d1; font-size: 1.1rem; margin-bottom: 1.5rem;">
+          They are hyper-motivated, <b>experienced professionals</b> who will provide you with organized coursework, daily new lessons and constant <b>mentoring throughout your entrepreneurship.</b>
+        </div>
+        <div style="color: #bfc9d1; font-size: 1.1rem;">
+          From learning how to make your first dollar, <b>to scaling to a multi million dollar business, THE REAL WORLD is unmatched.</b>
+        </div>
+      </div>
+      <div class="live-sessions-image" style="flex: 1 1 350px; min-width: 320px; text-align: center;">
+        <img src="https://framerusercontent.com/images/rtAqc4QjnylNpWdunND5E3NvH9s.webp" alt="Live Session Preview" style="width: 100%; max-width: 500px; border-radius: 18px; box-shadow: 0 4px 32px #0003; background: #181c27;" />
+      </div>
+    </section>
+    <section class="community-section" style=" margin-top: 100px; margin-bottom: 30px;  max-width: 1100px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem;">
+      <div class="community-image" style="flex: 1 1 350px; min-width: 320px; text-align: center; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: center;">
+        <img src="https://framerusercontent.com/images/5qeJmi3ALthM0cIa4OXf6Fm2K9M.webp" alt="Chat Screenshot 1" style="width: 500px; height: 520px; border-radius: 16px; box-shadow: 0 2px 16px #0003; background: #232a36; object-fit: cover;" />
+      </div>
+      <div class="community-content" style="flex: 1 1 400px; min-width: 320px;">
+        <div style="font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 1.2rem; letter-spacing: 1px; text-transform: uppercase;">AN EXCLUSIVE COMMUNITY WITH 113K+<br>LIKE-MINDED STUDENTS</div>
+        <div style="color: #bfc9d1; font-size: 1.1rem; margin-bottom: 2rem;">
+          Our online community is a supportive, high-focus environment. Everyone is on the same mission: acquiring an abundance of wealth.
+        </div>
+        <div class="community-checklist">
+          <div style="background: #181c27; border-radius: 12px; margin-bottom: 1rem; padding: 1.1rem 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 2px 16px #0003; font-size: 1.1rem; font-weight: 700; color: #fff;">
+            <span style="color: #FFC72C; font-size: 1.5rem; margin-right: 0.7rem;">✔</span> Network with <b>113,000+ people on the same mission</b>
+          </div>
+          <div style="background: #181c27; border-radius: 12px; margin-bottom: 1rem; padding: 1.1rem 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 2px 16px #0003; font-size: 1.1rem; font-weight: 700; color: #fff;">
+            <span style="color: #FFC72C; font-size: 1.5rem; margin-right: 0.7rem;">✔</span> Make <b>like-minded friends</b> on your financial journey
+          </div>
+          <div style="background: #181c27; border-radius: 12px; margin-bottom: 1rem; padding: 1.1rem 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 2px 16px #0003; font-size: 1.1rem; font-weight: 700; color: #fff;">
+            <span style="color: #FFC72C; font-size: 1.5rem; margin-right: 0.7rem;">✔</span> <b>Celebrate your wins</b> with people who understand ambition
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Section with User Success Stories -->
+    <section class="images-preview" style="padding: 2rem 1rem; max-width: 1200px; margin: 0 auto; background-color: #0d1117;">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h2 style="color: #FFC72C; font-size: 1.2rem; letter-spacing: 2px; font-weight: bold; margin-bottom: 0.5rem;">THE RED WOLF WINS</h2>
+        <h1 style="font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 2rem;">OUR STUDENTS ARE WINNING</h1>
+      </div>
+      <section class="tweets">
+      <style>
+        /* Mobile responsiveness for testimonial section */
+        @media (max-width: 768px) {
+          .tweets-content {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        
+        @media (max-width: 576px) {
+          .tweets-content {
+            grid-template-columns: 1fr !important;
+            gap: 15px !important;
+            padding: 0 10px !important;
+          }
+          .testimonial-box {
+            width: 100% !important;
+            padding: 10px !important;
+            margin-bottom: 5px !important;
+          }
+          .testimonial-box img.proof-image {
+            max-height: 300px !important;
+            object-fit: cover !important;
+          }
+          .testimonial-profile {
+            flex-wrap: nowrap !important;
+          }
+          .testimonial-username {
+            font-size: 0.8rem !important;
+          }
+          .testimonial-date {
+            font-size: 0.65rem !important;
+          }
+          .testimonial-text {
+            font-size: 0.8rem !important;
+            line-height: 1.3 !important;
+          }
+          .testimonial-profile-pic {
+            min-width: 28px !important;
+            width: 28px !important;
+            height: 28px !important;
+          }
+          .like-btn {
+            font-size: 0.8rem !important;
+          }
+        }
+      </style>
+      <div class="tweets-content" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto;">
+        <!-- Testimonial Box 1 -->
+        <div class="testimonial-box" style="background-color: #0e1218; border-radius: 8px; padding: 12px; position: relative; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); overflow: hidden; width: 100%;">
+          <div class="testimonial-profile" style="display: flex; align-items: center; margin-bottom: 10px; gap: 8px;">
+            <div class="testimonial-profile-pic" style="width: 32px; height: 32px; border-radius: 50%; overflow: hidden; border: 2px solid #FFC72C; box-shadow: 0 0 10px rgba(255, 199, 44, 0.5);">
+              <img src="images/boy.png" alt="User" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+              <span class="testimonial-username" style="font-weight: bold; color: #fff; font-size: 0.85rem;">MaxPower88</span>
+              <span class="testimonial-date" style="font-size: 0.7rem; color: #9ca3af;">Yesterday at 4:58 PM</span>
+            </div>
+          </div>
+          <p class="testimonial-text" style="color: #adbac7; font-size: 0.85rem; margin-bottom: 8px; line-height: 1.3;">been following the tates for months and did everything they told me, now im rich</p>
+          <div style="margin-top: 6px; border-radius: 6px; overflow: hidden; width: 100%;">
+            <img class="proof-image" src="images/image/(2).jpg" alt="Success Proof" style="display: block; border-radius: 8px; width: 100%;">
+          </div>
+          <div style="display: flex; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #768390; font-size: 0.85rem; position: relative;">
+            <button class="like-btn" onclick="handleLike(this)" data-count="52">👍 Like <span class="like-count"></span></button>
+          </div>
+          <div class="comment-form" id="comment-form-1" style="display: none; margin-top: 8px;">
+            <input type="text" placeholder="Add a comment..." class="comment-input" style="width: 100%; padding: 6px 8px; border-radius: 8px; border: 1px solid #30363d; background: #0d1117; color: #adbac7; font-size: 0.85rem;">
+            <div style="display: flex; gap: 8px; margin-top: 6px; justify-content: flex-end;">
+              <button class="cancel-btn" onclick="hideCommentForm(this.parentNode.parentNode.id)">Cancel</button>
+              <button class="submit-btn" onclick="submitComment(this.parentNode.parentNode.id)">Submit</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial Box 2 -->
+        <div class="testimonial-box" style="background-color: #0e1218; border-radius: 8px; padding: 12px; position: relative; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); overflow: hidden; width: 100%;">
+          <div class="testimonial-profile" style="display: flex; align-items: center; margin-bottom: 10px; gap: 8px;">
+            <div class="testimonial-profile-pic" style="width: 32px; height: 32px; border-radius: 50%; overflow: hidden; border: 2px solid #FFC72C; box-shadow: 0 0 10px rgba(255, 199, 44, 0.5);">
+              <img src="images/boy.png" alt="User" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+              <span class="testimonial-username" style="font-weight: bold; color: #fff; font-size: 0.85rem;">CryptoKing23</span>
+              <span class="testimonial-date" style="font-size: 0.7rem; color: #9ca3af;">Yesterday at 5:43 PM</span>
+            </div>
+          </div>
+          <p class="testimonial-text" style="color: #adbac7; font-size: 0.85rem; margin-bottom: 8px; line-height: 1.3;">No more economy🗿</p>
+          <div style="margin-top: 6px; border-radius: 6px; overflow: hidden; width: 100%;">
+            <img class="proof-image" src="images/image/(4).jpg" alt="Success Proof" style="display: block; border-radius: 8px;">
+          </div>
+          <div style="display: flex; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #768390; font-size: 0.85rem; position: relative;">
+            <button class="like-btn" onclick="handleLike(this)" data-count="37">👍 Like <span class="like-count"></span></button>
+          </div>
+          <div class="comment-form" id="comment-form-1" style="display: none; margin-top: 8px;">
+            <input type="text" placeholder="Add a comment..." class="comment-input" style="width: 100%; padding: 6px 8px; border-radius: 8px; border: 1px solid #30363d; background: #0d1117; color: #adbac7; font-size: 0.85rem;">
+            <div style="display: flex; gap: 8px; margin-top: 6px; justify-content: flex-end;">
+              <button class="cancel-btn" onclick="hideCommentForm(this.parentNode.parentNode.id)">Cancel</button>
+              <button class="submit-btn" onclick="submitComment(this.parentNode.parentNode.id)">Submit</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial Box 3 -->
+        <div data-testimonial-id="3" style="background-color: #0e1218; border-radius: 8px; padding: 12px; position: relative; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); overflow: hidden; width: 100%;">
+          <div class="testimonial-profile" style="display: flex; align-items: center; margin-bottom: 10px; gap: 8px;">
+            <div class="testimonial-profile-pic" style="width: 32px; height: 32px; border-radius: 50%; overflow: hidden; border: 2px solid #FFC72C; box-shadow: 0 0 10px rgba(255, 199, 44, 0.5);">
+              <img src="images/boy.png" alt="User" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+              <span class="testimonial-username" style="font-weight: bold; color: #fff; font-size: 0.85rem;">WealthWizard</span>
+              <span class="testimonial-date" style="font-size: 0.7rem; color: #9ca3af;">Yesterday at 12:13 PM</span>
+            </div>
+          </div>
+          <p class="testimonial-text" style="color: #adbac7; font-size: 0.85rem; margin-bottom: 8px; line-height: 1.3;">The food on the jet was 🔥</p>
+          <div style="margin-top: 10px; border-radius: 8px; overflow: hidden; width: 100%;">
+            <img class="proof-image" src="images/image/(6).jpg" alt="Success Proof" style="width: 100%; border-radius: 8px; display: block;">
+          </div>
+          <div style="display: flex; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #768390; font-size: 0.85rem; position: relative;">
+            <button class="like-btn" onclick="handleLike(this)" data-count="75">👍 Like <span class="like-count"></span></button>
+          </div>
+          <div class="comment-form" id="comment-form-1" style="display: none; margin-top: 8px;">
+            <input type="text" placeholder="Add a comment..." class="comment-input" style="width: 100%; padding: 6px 8px; border-radius: 8px; border: 1px solid #30363d; background: #0d1117; color: #adbac7; font-size: 0.85rem;">
+            <div style="display: flex; gap: 8px; margin-top: 6px; justify-content: flex-end;">
+              <button class="cancel-btn" onclick="hideCommentForm(this.parentNode.parentNode.id)">Cancel</button>
+              <button class="submit-btn" onclick="submitComment(this.parentNode.parentNode.id)">Submit</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial Box 4 -->
+        <div class="testimonial-box" style="background-color: #0e1218; border-radius: 8px; padding: 12px; position: relative; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); overflow: hidden; width: 100%;">
+          <div class="testimonial-profile" style="display: flex; align-items: center; margin-bottom: 10px; gap: 8px;">
+            <div class="testimonial-profile-pic" style="width: 32px; height: 32px; border-radius: 50%; overflow: hidden; border: 2px solid #FFC72C; box-shadow: 0 0 10px rgba(255, 199, 44, 0.5);">
+            <img src="images/boy.png" alt="User" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+              <span class="testimonial-username" style="font-weight: bold; color: #fff; font-size: 0.85rem;">MoneyMaker42</span>
+              <span class="testimonial-date" style="font-size: 0.7rem; color: #9ca3af;">Today at 1:18 AM</span>
+            </div>
+          </div>
+          <p class="testimonial-text" style="color: #adbac7; font-size: 0.85rem; margin-bottom: 8px; line-height: 1.3;">Hit our first 100k after the first 6 months of starting our business</p>
+          <div style="margin-top: 6px; border-radius: 6px; overflow: hidden; width: 100%;">
+            <img class="proof-image" src="images/image/(1).jpg" alt="Success Proof" style="width: 100%; border-radius: 8px; display: block;">
+          </div>
+          <div style="display: flex; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #768390; font-size: 0.85rem; position: relative;">
+            <button class="like-btn" onclick="handleLike(this)" data-count="45">👍 Like <span class="like-count"></span></button>
+          </div>
+          <div class="comment-form" id="comment-form-1" style="display: none; margin-top: 8px;">
+            <input type="text" placeholder="Add a comment..." class="¹id #30363d; background: #0d1117; color: #adbac7; font-size: 0.85rem;">
+            <div style="display: flex; gap: 8px; margin-top: 6px; justify-content: flex-end;">
+              <button class="cancel-btn" onclick="hideCommentForm(this.parentNode.parentNode.id)">Cancel</button>
+              <button class="submit-btn" onclick="submitComment(this.parentNode.parentNode.id)">Submit</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial Box 3 -->
+        <div style="background-color: #0e1218; border-radius: 8px; padding: 12px; position: relative; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); overflow: hidden; width: auto; height: auto;">
+          <div class="testimonial-profile" style="display: flex; align-items: center; margin-bottom: 10px; gap: 8px;">
+            <div class="testimonial-profile-pic" style="width: 32px; height: 32px; border-radius: 50%; overflow: hidden; border: 2px solid #FFC72C; box-shadow: 0 0 10px rgba(255, 199, 44, 0.5);">
+              <img src="images/boy.png" alt="User" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+              <span class="testimonial-username" style="font-weight: bold; color: #fff; font-size: 0.85rem;">SuccessHunter</span>
+              <span class="testimonial-date" style="font-size: 0.7rem; color: #9ca3af;">Today at 1:01 PM</span>
+            </div>
+          </div>
+          <p class="testimonial-text" style="color: #adbac7; font-size: 0.85rem; margin-bottom: 8px; line-height: 1.3;">I started my business 20 days ago, at 17 years old and I've made 3750€. I don't really understand, how can people tell that TRW is a scam. Thank you very much for making my life better Andrew and Tristan...</p>
+          <div style="margin-top: 6px; border-radius: 6px; overflow: hidden; width: 100%;">
+            <img class="proof-image" src="images/image/(9).jpg" alt="Success Proof" style="display: block; border-radius: 8px;">
+          </div>
+          <div style="display: flex; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #768390; font-size: 0.85rem; position: relative;">
+            <button class="like-btn" onclick="handleLike(this)" data-count="34">👍 Like <span class="like-count"></span></button>
+          </div>
+          <div class="comment-form" id="comment-form-1" style="display: none; margin-top: 8px;">
+            <input type="text" placeholder="Add a comment..." class="comment-input" style="width: 100%; padding: 6px 8px; border-radius: 8px; border: 1px solid #30363d; background: #0d1117; color: #adbac7; font-size: 0.85rem;">
+            <div style="display: flex; gap: 8px; margin-top: 6px; justify-content: flex-end;">
+              <button class="cancel-btn" onclick="hideCommentForm(this.parentNode.parentNode.id)">Cancel</button>
+              <button class="submit-btn" onclick="submitComment(this.parentNode.parentNode.id)">Submit</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial Box 6 -->
+        <div class="testimonial-box" style="background-color: #0e1218; border-radius: 8px; padding: 12px; position: relative; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); overflow: hidden; width: 100%;">
+          <div class="testimonial-profile" style="display: flex; align-items: center; margin-bottom: 10px; gap: 8px;">
+            <div class="testimonial-profile-pic" style="width: 32px; height: 32px; border-radius: 50%; overflow: hidden; border: 2px solid #FFC72C; box-shadow: 0 0 10px rgba(255, 199, 44, 0.5);">
+              <img src="images/boy.png" alt="User" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+              <span class="testimonial-username" style="font-weight: bold; color: #fff; font-size: 0.85rem;">LuxuryLifestyle</span>
+              <span class="testimonial-date" style="font-size: 0.7rem; color: #9ca3af;">Yesterday at 9:19 AM</span>
+            </div>
+          </div>
+          <p class="testimonial-text" style="color: #adbac7; font-size: 0.85rem; margin-bottom: 8px; line-height: 1.3;">Just bought a new 60ft yacht for $400k.... bucket list check</p>
+          <div style="margin-top: 6px; border-radius: 6px; overflow: hidden; width: 100%;">
+            <img class="proof-image" src="images/image/(10).jpg" alt="Success Proof" style="display: block; border-radius: 8px;">
+          </div>
+          <div style="display: flex; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #768390; font-size: 0.85rem; position: relative;">
+            <button class="like-btn" onclick="handleLike(this)" data-count="56">👍 Like <span class="like-count"></span></button>
+          </div>
+          <div class="comment-form" id="comment-form-1" style="display: none; margin-top: 8px;">
+            <input type="text" placeholder="Add a comment..." class="comment-input" style="width: 100%; padding: 6px 8px; border-radius: 8px; border: 1px solid #30363d; background: #0d1117; color: #adbac7; font-size: 0.85rem;">
+            <div style="display: flex; gap: 8px; margin-top: 6px; justify-content: flex-end;">
+              <button class="cancel-btn" onclick="hideCommentForm(this.parentNode.parentNode.id)">Cancel</button>
+              <button class="submit-btn" onclick="submitComment(this.parentNode.parentNode.id)">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Interviews Section -->
+    <section style="padding: 4rem 1rem; background-color: #0d1117;">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h2 style="color: #FFC72C; font-size: 1.2rem; letter-spacing: 2px; font-weight: bold; margin-bottom: 0.5rem;">OUR STUDENTS ARE LEVELING UP</h2>
+        <h1 style="font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 2rem;">STUDENT INTERVIEWS</h1>
+      </div>
+
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+          <!-- Video 1 -->
+          <div style="flex: 1; min-width: 300px; max-width: calc(33.33% - 1rem); background-color: #0e1218; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+            <div style="background-color: #FFC72C; color: #000; font-weight: bold; padding: 0.5rem; text-align: center; font-size: 0.9rem;">COMPLETE COURSE</div>
+            <div style="background-color: #000; position: relative;">
+              <iframe src="https://player.vimeo.com/video/1086326134?h=f3cb19d600&autoplay=0&loop=0&title=0&byline=0&portrait=0" style="display: block; width: 100%; height: 240px; border-bottom: 4px solid #FFC72C;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div style="flex: 1; min-width: 300px; max-width: calc(33.33% - 1rem); background-color: #0e1218; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+            <div style="background-color: #FFC72C; color: #000; font-weight: bold; padding: 0.5rem; text-align: center; font-size: 0.9rem;">COMPLETE COURSE</div>
+            <div style="background-color: #000; position: relative;">
+              <iframe src="https://player.vimeo.com/video/1086326179?h=f3cb19d600&autoplay=0&loop=0&title=0&byline=0&portrait=0" style="display: block; width: 100%; height: 240px; border-bottom: 4px solid #FFC72C;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <!-- Video 3 -->
+          <div style="flex: 1; min-width: 300px; max-width: calc(33.33% - 1rem); background-color: #0e1218; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+            <div style="background-color: #FFC72C; color: #000; font-weight: bold; padding: 0.5rem; text-align: center; font-size: 0.9rem;">COMPLETE COURSE</div>
+            <div style="background-color: #000; position: relative;">
+              <iframe src="https://player.vimeo.com/video/1086326238?h=f3cb19d600&autoplay=0&loop=0&title=0&byline=0&portrait=0" style="display: block; width: 100%; height: 240px; border-bottom: 4px solid #FFC72C;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="paypal" style=" margin-top: 100px; margin-bottom: 30px;  max-width: 1100px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem;">
+      
+      <div class="community-content" style="flex: 1 1 400px; min-width: 320px;">
+        <div style="font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 1.2rem; letter-spacing: 1px; text-transform: uppercase;">Easy Money Transfer <br>Paypal+Skirll <br> +Western Union</div>
+        <div style="color: #bfc9d1; font-size: 1.1rem; margin-bottom: 2rem;">
+        Send and Receive Money Effortlessly Using Trusted Services: PayPal, Skrill, and Western Union
+        </div>
+        <a  href="http://localhost/hacker/EMT.html" class="cta-btn-main">Transfer</a>
+        
+      </div>
+      <div class="paypal-image" style="flex: 1 1 350px; min-width: 320px; text-align: center; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: center;">
+        <img src="https://i.pinimg.com/736x/17/20/6d/17206d1d2ef3080a2f856080101c694e.jpg" style="width: 500px; height: 520px; border-radius: 16px; box-shadow: 0 2px 16px #0003; background: #232a36; object-fit: cover;">
+      </div>
+    </section>
+    <section class="tiktok-coins-section" style="margin: 4rem auto 2.5rem auto; max-width: 1100px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem; margin-bottom: 100px; margin-top: 100px;">
+  <div style="width: 100%; text-align: center;">
+    <h2 style="color: #fff; font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">🔥 TikTok Coin Deals – Best Value! 🔥</h2>
+  </div>
+  <div class="tiktok-coins-grid" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; width: 100%;">
+    <div class="tiktok-coin-card" style="background: #181c27; border-radius: 16px; box-shadow: 0 2px 16px #0003; padding: 2rem 1.5rem 1.5rem 1.5rem; text-align: center; min-width: 260px; max-width: 320px; flex: 1 1 260px;">
+      <div style="font-size: 1.5rem; color: #FFC72C; font-weight: 900; margin-bottom: 0.5rem;">20,000 Coins</div>
+      <div style="font-size: 2rem; color: #fff; font-weight: 900; margin-bottom: 1rem;">$0</div>
+      <a href="tiktok-coin-order.php?package=20000&price=0" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="tiktok-coin-card" style="background: #181c27; border-radius: 16px; box-shadow: 0 2px 16px #0003; padding: 2rem 1.5rem 1.5rem 1.5rem; text-align: center; min-width: 260px; max-width: 320px; flex: 1 1 260px;">
+      <div style="font-size: 1.5rem; color: #FFC72C; font-weight: 900; margin-bottom: 0.5rem;">30,000 Coins</div>
+      <div style="font-size: 2rem; color: #fff; font-weight: 900; margin-bottom: 1rem;">$0</div>
+      <a href="tiktok-coin-order.php?package=30000&price=0" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="tiktok-coin-card" style="background: #181c27; border-radius: 16px; box-shadow: 0 2px 16px #0003; padding: 2rem 1.5rem 1.5rem 1.5rem; text-align: center; min-width: 260px; max-width: 320px; flex: 1 1 260px;">
+      <div style="font-size: 1.5rem; color: #FFC72C; font-weight: 900; margin-bottom: 0.5rem;">50,000 Coins</div>
+      <div style="font-size: 2rem; color: #fff; font-weight: 900; margin-bottom: 1rem;">$0</div>
+      <a href="tiktok-coin-order.php?package=50000&price=80" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+  <style>
+    @media (max-width: 900px) {
+      .tiktok-coins-grid { flex-direction: column; gap: 1.5rem; }
+      .tiktok-coin-card { min-width: 200px; max-width: 100%; }
+    }
+  </style>
+</section>
+    <section class="iphone">
+      <div class="iphone-content">
+        <img src="iPhone_16_Pro_Max.png" alt="iPhone 15 Pro Max" style="width: 800px; border-radius: 16px; display: block; margin: 0 auto;">
+        <h1 style="text-align: center; font-size: 2rem; font-weight: 900; color: #fff; margin-top: -1.5rem; margin-bottom: 0.7rem; letter-spacing: 1px; text-transform: uppercase;">iPhone 16 Pro Max</h1>
+        <div style="display: flex; align-items: center; justify-content: center; margin-top: 1.5rem; gap: 1rem;">
+          <a style="text-decoration: none;" href="javascript:void(0)" id="iphone-btn-140" class="cta-btn-iphone" onclick="showDescription('desc-140')">0$</a>
+          <a style="text-decoration: none;" href="javascript:void(0)" id="iphone-btn-160" class="cta-btn-iphone" onclick="showDescription('desc-160')">0$</a>
+          <a style="text-decoration: none;" href="javascript:void(0)" id="iphone-btn-180" class="cta-btn-iphone" onclick="showDescription('desc-180')">0$</a>
+          <style>
+            .cta-btn-iphone{
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              background: transparent;
+              border: 2px solid #FFC72C;
+              border-radius: 12px;
+              padding: 0.5rem 1.3rem;
+              height: 35px;
+              color: #fff;
+              font-size: 0.9rem;
+              text-align: center;
+              cursor: pointer;
+            }
+            .cta-btn-iphone:hover{
+              border: 2px solid #FFC72C;
+              background: #FFC72C;
+              box-shadow: 0 0 10px #FFC72C;
+              transition: box-shadow 0.3s;
+            }
+            .cta-btn-iphone.active {
+              background: #FFC72C;
+              color: #000;
+              box-shadow: 0 0 15px #FFC72C;
+            }
+            .iphone-description {
+              display: none;
+              background: rgba(0,0,0,0.7);
+              border: 2px solid #FFC72C;
+              border-radius: 12px;
+              padding: 15px;
+              margin: 15px auto;
+              max-width: 800px;
+              color: #fff;
+              box-shadow: 0 0 10px rgba(255,199,44,0.5);
+              animation: fadeIn 0.3s ease-in-out;
+            }
+            .iphone-description h3 {
+              color: #FFC72C;
+              margin-top: 0;
+              border-bottom: 1px solid #FFC72C;
+              padding-bottom: 8px;
+            }
+            @keyframes fadeIn {
+              from { opacity: 0; transform: translateY(-10px); }
+              to { opacity: 1; transform: translateY(0); }
+            }
+          </style>
+        </div>
+        
+        <!-- iPhone Descriptions -->
+        <div id="desc-140" class="iphone-description">
+          <h3>iPhone 16 Pro Max - Basic Package ($99)</h3>
+          <p>✅ Brand new iPhone 16 Pro Max</p>
+          <p>✅ 256GB Storage</p>
+          <p>✅ Basic warranty</p>
+          <p>✅ Standard accessories included</p>
+          <p>✅ Course + Card benefit included</p>
+        </div>
+        
+        <div id="desc-160" class="iphone-description">
+          <h3>iPhone 16 Pro Max - Premium Package ($120)</h3>
+          <p>✅ Brand new iPhone 16 Pro Max</p>
+          <p>✅ 512GB Storage</p>
+          <p>✅ Extended warranty</p>
+          <p>✅ Premium accessories package</p>
+          <p>✅ Course + Card benefit included</p>
+          <p>✅ Free premium case</p>
+        </div>
+        
+        <div id="desc-180" class="iphone-description">
+          <h3>iPhone 16 Pro Max - Ultimate Package ($160)</h3>
+          <p>✅ Brand new iPhone 16 Pro Max</p>
+          <p>✅ 1TB Storage</p>
+          <p>✅ 2-Year extended warranty</p>
+          <p>✅ Complete premium accessories set</p>
+          <p>✅ Course + Card benefit included</p>
+          <p>✅ Free premium case + screen protector</p>
+          <p>✅ Priority shipping</p>
+          <p>✅ 24/7 VIP support</p>
+        </div>
+      
+        <div style="display: flex; justify-content: center; align-items: flex-end; margin-top: 20px;" class="iphone-buynow">
+          <a href="0$-order.php?title=iPhone%2016%20Pro%20Max%20-%20Basic%20Package&price=99&value=256GB&flag=iPhone_16_Pro_Max.png" id="iphone-buy-button" class="cta-btn-main">Buy Now</a>
+        </div>
+        
+        <script>
+          // Set default selected price
+          let selectedPrice = '140';
+          let packageDetails = {
+            '140': {
+              title: 'iPhone 16 Pro Max - Basic Package',
+              price: '99',
+              storage: '256GB'
+            },
+            '160': {
+              title: 'iPhone 16 Pro Max - Premium Package',
+              price: '120',
+              storage: '512GB'
+            },
+            '180': {
+              title: 'iPhone 16 Pro Max - Ultimate Package',
+              price: '160',
+              storage: '1TB'
+            }
+          };
+          
+          function showDescription(descId) {
+            // Hide all descriptions first
+            const descriptions = document.querySelectorAll('.iphone-description');
+            descriptions.forEach(desc => {
+              desc.style.display = 'none';
+            });
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.cta-btn-iphone');
+            buttons.forEach(btn => {
+              btn.classList.remove('active');
+            });
+            
+            // Show the selected description
+            const selectedDesc = document.getElementById(descId);
+            if (selectedDesc) {
+              selectedDesc.style.display = 'block';
+              
+              // Extract the price from the description ID
+              selectedPrice = descId.split('-')[1];
+              
+              // Update Buy Now button href with proper parameters
+              const buyButton = document.getElementById('iphone-buy-button');
+              if (buyButton) {
+                const details = packageDetails[selectedPrice];
+                const params = new URLSearchParams();
+                params.append('title', details.title);
+                params.append('price', details.price);
+                params.append('value', details.storage);
+                params.append('flag', 'iPhone_16_Pro_Max.png');
+                
+                buyButton.href = selectedPrice + '$-order.php?' + params.toString();
+              }
+              
+              // Add active class to the clicked button
+              const buttonId = 'iphone-btn-' + selectedPrice;
+              const activeButton = document.getElementById(buttonId);
+              if (activeButton) {
+                activeButton.classList.add('active');
+              }
+            }
+          }
+          
+          // Initialize the first option as selected
+          document.addEventListener('DOMContentLoaded', function() {
+            showDescription('desc-140');
+          });
+        </script>
+    </section>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-links">
+      <a href="index.php" class="active">Home</a>
+      <a href="#courses">Courses</a>
+      <a href="Cards.html">Cards</a>
+      <a href="EMT.html">Money transfer</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/@redwolfhacker" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.whatsapp.com/channel/0029Vb9Gx7K17EmsIp3xfH13" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://t.me/@riwofficial" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+      </div>
+      <div style="
+      position: absolute; 
+      left: 60%;
+      margin-top: -73px;
+      " class="logo-footer">
+        <a href="index.php"><img style="width: 150px;" src="logo.png" alt=""></a>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 RedWolf. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const item = this.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+  <!-- Responsive navigation script -->
+  <script src="js/responsive.js"></script>
+  <!-- Testimonial interactions script -->
+  <script src="js/testimonial-interactions.js"></script>
+<style>
+  .reaction-btn, .comment-btn {
+    border: none;
+    background: transparent;
+    color: #768390;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .reaction-btn:hover, .comment-btn:hover {
+    background-color: rgba(255, 199, 44, 0.1);
+    color: #FFC72C;
+  }
+  .reaction-btn.active {
+    color: #FFC72C;
+    font-weight: bold;
+  }
+  .cancel-btn, .submit-btn {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+  .cancel-btn {
+    background-color: transparent;
+    border: 1px solid #30363d;
+    color: #768390;
+  }
+  .submit-btn {
+    background-color: #FFC72C;
+    color: #0d1117;
+    font-weight: bold;
+  }
+  .comment-input {
+    width: 100%;
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    background: #0d1117;
+    color: #adbac7;
+    font-size: 0.85rem;
+  }
+</style>
+
+<script>
+  // Function to handle reactions (likes, etc)
+  function handleReaction(btn) {
+    btn.classList.toggle('active');
+    const span = btn.querySelector('span');
+    let count = parseInt(span.textContent);
+    
+    // Increment or decrement count based on active state
+    if (btn.classList.contains('active')) {
+      count++;
+    } else {
+      count--;
+    }
+    
+    // Update the count
+    span.textContent = count;
+  }
+  
+  // Function to show comment form
+  function showCommentForm(formId) {
+    const form = document.getElementById(formId);
+    form.style.display = 'block';
+    form.querySelector('.comment-input').focus();
+  }
+  
+  // Function to hide comment form
+  function hideCommentForm(formId) {
+    const form = document.getElementById(formId);
+    form.style.display = 'none';
+    form.querySelector('.comment-input').value = '';
+  }
+  
+  // Function to submit a comment
+  function submitComment(formId) {
+    const form = document.getElementById(formId);
+    const input = form.querySelector('.comment-input');
+    const comment = input.value.trim();
+    
+    if (comment) {
+      // Create comment element
+      const commentBox = document.createElement('div');
+      commentBox.className = 'user-comment';
+      commentBox.style.padding = '8px';
+      commentBox.style.marginTop = '8px';
+      commentBox.style.backgroundColor = 'rgba(255, 199, 44, 0.05)';
+      commentBox.style.borderRadius = '4px';
+      commentBox.style.fontSize = '0.85rem';
+      commentBox.style.color = '#adbac7';
+      commentBox.style.borderLeft = '2px solid #FFC72C';
+      
+      // Add username and comment text
+      const username = document.createElement('span');
+      username.style.fontWeight = 'bold';
+      username.style.color = '#fff';
+      username.textContent = 'You: ';
+      
+      commentBox.appendChild(username);
+      commentBox.appendChild(document.createTextNode(comment));
+      
+      // Insert comment before form
+      form.parentNode.insertBefore(commentBox, form);
+      
+      // Hide form
+      hideCommentForm(formId);
+    }
+  }
+</script>
+</body>
+</html>
